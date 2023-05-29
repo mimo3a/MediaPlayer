@@ -60,7 +60,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#beendenKlick" text="Beenden" />
                </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Wiedergabe">
+        <Menu fx:id="wiedergabeMenu" disable="true" mnemonicParsing="false" text="Wiedergabe">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#pauseKlick" text="Pause" />
             <MenuItem mnemonicParsing="false" onAction="#playKlick" text="Wiedergeben" />
@@ -80,20 +80,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#playKlick">
+            <Button fx:id="playButton" disable="true" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#playPauseKlick">
                <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="symbolPlay" fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../icons/play.gif" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="50.0" layoutY="11.0" mnemonicParsing="false" onAction="#pauseKlick">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../icons/pause.gif" />
                      </image>
                   </ImageView>
                </graphic>
@@ -109,7 +100,7 @@
             </Button>
             <Button layoutX="130.0" layoutY="11.0" mnemonicParsing="false" onAction="#lautsprecherKlick">
                <graphic>
-                  <ImageView fx:id="symbol" fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="symbolVolume" fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../icons/mute.gif" />
                      </image>
@@ -124,7 +115,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <ListView fx:id="liste" layoutX="-21.0" layoutY="27.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ListView fx:id="liste" layoutX="-21.0" layoutY="27.0" onMouseClicked="#ausListeWaelen" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="400.0" prefHeight="160.0" prefWidth="100.0">

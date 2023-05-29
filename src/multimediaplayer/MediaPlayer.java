@@ -3,7 +3,7 @@ package multimediaplayer;
 
 import java.io.File;
 
-import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,7 @@ public class MediaPlayer extends Application{
 		System.out.println("0");
 //		die Datei laden
 		Parent root = meinLoader.load();
-		System.out.println("root");
+		System.out.println("1");
 //		den Controller beschaffen
 	    FXMLController meinController = meinLoader.getController();
 	    System.out.println("2");
@@ -40,14 +40,13 @@ public class MediaPlayer extends Application{
 		meineStage.setScene(meineScene);
 //		im Vollbild darstellen
 		meineStage.setMaximized(true);
-//		icon setzen
+//		ein icon zun Titel setzen
 		File bilddatei = new File("icons/icon.gif");
-		Image bild = new Image(bilddatei.toURI().toString());
-		meineStage.getIcons().add(bild);
+		Image bild = new Image(bilddatei.toURI().toString()); 
+ 		
+		meineStage.getIcons().addAll(bild);
 //		und anzeigen
 		meineStage.show();
-		
-		
 	}
 	
 	public static void main(String[] args) {
